@@ -6,9 +6,9 @@ import {useState} from 'react';
 const login = () => {
   return (
     
-    <div>
-      <h1>Iniciar sesion</h1>
-      <div className = 'login'>
+    <div className = 'login'>
+      <h1 id="loginHeader">Iniciar sesion</h1>
+      <div className = 'login__form'>
           <form>
             <div className>
 
