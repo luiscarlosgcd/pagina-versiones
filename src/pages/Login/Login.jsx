@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css';
-
+import { Link } from 'react-router-dom';
 import {useState} from 'react';
 
 const login = () => {
@@ -24,12 +24,11 @@ const login = () => {
                 </label>
               </div>
               <div className = 'login__input'>
-                <input type="submit"></input>
+                  <input type="submit" value='Enviar'></input>
               </div>
             </div>
           </form>
       </div>
-
     </div>
   )
 }
