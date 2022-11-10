@@ -1,4 +1,8 @@
 body {
   margin: 0;
-  border: 0;
+  height: 100vh;
+  font-family: arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

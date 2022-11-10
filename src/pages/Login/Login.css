@@ -1,18 +1,5 @@
+
 .login{
-    margin: 0;
-    height: 90vh;
-    font-family: arial;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-#loginHeader{
-    margin-left: -69px;
-}
-
-.login__form{
     color: black;
     display: flex;
     flex-direction: column;
@@ -25,6 +12,7 @@
 .login__input{
     text-align: center;
 }
+
 
 input[type = text]{
     margin-top: 5px;
@@ -48,5 +36,5 @@ input[type=submit]{
 }
 
 input[type=submit]:hover {
-    background-color: blue;
+    background-color: lightgray;
   }
