@@ -1,8 +1,8 @@
 .nav-sidemenu{
-    background-color: #adcce6;
+    background-color: #D1EDF2;
     display: flex;
     justify-content: start;
-    width: 250px;
+    width: 200px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -10,6 +10,9 @@
     transition: 850ms;
     top: 53px;
     right: 20px;
+    border-right-style: solid;
+    border-color:#0730a2;
+    border-width: 1px;
 }
 
 .nav-sidemenu.active{
@@ -40,7 +43,7 @@
 }
 
 .nav-text a:hover{
-    color: blue;
+    color: #0730a2;
 }
 
 .nav-menu__items{

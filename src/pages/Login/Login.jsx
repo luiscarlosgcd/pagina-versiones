@@ -23,8 +23,8 @@ const login = () => {
                   <input type = 'text'/>
                 </label>
               </div>
-              <div className = 'login__input'>
-                  <input type="submit" value='Enviar'></input>
+              <div className='login__input'>
+                <button className='login__boton'><Link id='boton' to='/home'>Enviar</Link></button>
               </div>
             </div>
           </form>
