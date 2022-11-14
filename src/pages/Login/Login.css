@@ -13,7 +13,7 @@
 }
 
 .login__form{
-    color: black;
+    color: #393E46;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
 }
 
 .login__input :hover{
-    background-color: blue;
+    background-color: black;
 }
 
 input[type = text]{
@@ -49,12 +49,12 @@ input[type = text]{
     cursor: pointer;
     text-align: center;
     border-radius: 4px;
-    background-color: #0730a2;
+    background-color: #393E46;
     color: white;
 }
 
 .login__boton :hover{
-    background-color: blue;
+    background-color: black;
 }
 
 #boton{

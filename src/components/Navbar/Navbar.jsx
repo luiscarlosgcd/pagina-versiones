@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from '../Sidebar/SidebarData.jsx';
 import { Sidebar } from '../Sidebar/Sidebar.jsx';
 import '../Sidebar/Sidebar.css';
+import images from '../../constants/images';
 
 const Navbar = () => {
 
@@ -23,9 +24,9 @@ const Navbar = () => {
               <GiHamburgerMenu onClick={showSidebar}/>
             </Link>
           </div>
-          
-          <div className="app__navbar-logo">
-            <a>LOGO</a>
+
+          <div className='app__navbar-logo'>
+            <img src={images.REDPACIFICO1} alt='Logo Red Pacifico'/>
           </div>
 
           <div className="app__navbar-login">
@@ -36,23 +37,25 @@ const Navbar = () => {
 
         <nav className={sidebar ? 'nav-sidemenu active' : 'nav-sidemenu'}>
 
-          <ul className='nav-sidemenu__items'>
+          <div>
+            <ul className='nav-sidemenu__items'>
 
-            <div className='sidebar-heading'>
-              <a>Menú</a>
-            </div>
+              <div className='sidebar-heading'>
+                <img src={images.REDPACIFICO1} alt='Logo Red Pacifico'/>
+              </div>
 
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    <a>{item.title}</a>
-                  </Link>
-                </li>
-              );
-            })}
+              {SidebarData.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName}>
+                    <Link to={item.path}>
+                      <a>{item.title}</a>
+                    </Link>
+                  </li>
+                );
+              })}
 
-          </ul>
+            </ul>
+          </div>
 
         </nav>
       </>

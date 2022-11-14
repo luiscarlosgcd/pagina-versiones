@@ -3,11 +3,14 @@ import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 
 const Home = () => {
+
   return (
-    <div>
+    <div className='home'>
       <Navbar/>
       <div className='content-home'>
-        <h1>Content </h1>
+        <div className='content-home__center'>
+          <h1>Content </h1>
+        </div>
       </div>
     </div>
   )

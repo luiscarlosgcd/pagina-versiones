@@ -1,8 +1,23 @@
+.home{
+    background-color: #f7f7f7;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
 .content-home{
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    height: 90vh;
+    height: 97.5vh;
+    background-color: white;
+}
+
+.content-home__center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
 }

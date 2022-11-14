@@ -1,32 +1,29 @@
 .nav-sidemenu{
-    background-color: #D1EDF2;
+    background-color: #393E46;
+    color: white;
     display: flex;
     justify-content: start;
-    width: 200px;
+    width: 240px;
     height: 100vh;
     position: fixed;
     top: 0;
     left: -100%;
     transition: 850ms;
-    top: 53px;
+    top: 80px;
     right: 20px;
-    border-right-style: solid;
-    border-color:#0730a2;
-    border-width: 1px;
 }
 
 .nav-sidemenu.active{
     left: 0px;
     transition: 350ms;
+    padding-left: 20px;
 }
 
 .nav-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     padding: 8px 0px 8px 16px;
     list-style: none;
-    height: 60px
+    height: 60px;
 }
 
 .nav-text a{
@@ -40,10 +37,11 @@
     border-radius: 4px;
     font-family: Helvetica;
     font-size: 16px;
+    color: white;
 }
 
 .nav-text a:hover{
-    color: #0730a2;
+    color: red;
 }
 
 .nav-menu__items{
@@ -51,11 +49,14 @@
 }
 
 .sidebar-heading{
-    height: 80px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    margin: 20px 0 60px 30px;
-    font-weight: 800;
+    margin: 60px 0 50px 30px;
+}
+
+.sidebar-heading img{
+    width:150px;
+    height: auto;
 }
