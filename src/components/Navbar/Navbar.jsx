@@ -35,9 +35,9 @@ const Navbar = () => {
           
         </div>
 
-        <nav className={sidebar ? 'nav-sidemenu active' : 'nav-sidemenu'}>
+        <div className={sidebar ? 'nav-sidemenu__background active' : 'nav-sidemenu__background'}>
 
-          <div>
+          <nav className={sidebar ? 'nav-sidemenu active' : 'nav-sidemenu'}>
             <ul className='nav-sidemenu__items'>
 
               <div className='sidebar-heading'>
@@ -55,9 +55,9 @@ const Navbar = () => {
               })}
 
             </ul>
-          </div>
+          </nav>
 
-        </nav>
+        </div>
       </>
       
     );

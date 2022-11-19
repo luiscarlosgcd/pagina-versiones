@@ -96,5 +96,6 @@ background-color: #F7F7F7;
 
     .app__navbar-logo img {
         width: 110px;
+        padding-right: 40px;
     }
 }
