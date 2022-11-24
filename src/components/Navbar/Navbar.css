@@ -7,10 +7,11 @@
     padding: 20px;
     height: 80px;
     position: fixed;
+    background-size: cover;
 }
 
 .app__navbar-background{
-background-color: #F7F7F7;
+    background-color: #F7F7F7;
 }
 
 .p__opensans{

@@ -2,22 +2,34 @@
     background-color: #f7f7f7;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 20px;
 }
 .content-home{
     display: flex;
+    padding-top: 80px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    height: 97.5vh;
+    height: 100vh;
     background-color: white;
+
 }
 
 .content-home__center{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     margin: 0;
+}
+
+.content-home__data{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.content-home__data-single{
+    text-decoration: none;
+    color: black;
 }
