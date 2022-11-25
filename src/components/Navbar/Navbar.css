@@ -20,7 +20,6 @@
 }
 
 .app__navbar-hamburger{
-    padding-left: 10px;
     color: black;
 }
 
@@ -96,7 +95,10 @@
     }
 
     .app__navbar-logo img {
-        width: 110px;
-        padding-right: 40px;
+        width: 100px;
+    }
+
+    .app__navbar{
+        padding-right: 50px
     }
 }

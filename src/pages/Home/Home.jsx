@@ -18,7 +18,7 @@ const Home = () => {
         <div className='content-home__center'>
           {monitores != null ? ( 
             monitores.map(monitor => (
-              <div key={monitor.macAddress} className='grid-item content-home__data'>
+              <div key={monitor.macAddress} className='content-home__data'>
                 <b href="#" className="content-home__data-single">{monitor.tipo}</b>
                 <a href="#" className="content-home__data-single">Grupo: {monitor.group}</a>
                 <a href="#" className="content-home__data-single">MAC Address: {monitor.macAddress}</a>
@@ -26,7 +26,7 @@ const Home = () => {
                 <u href="#" className="content-home__data-single">Version: {monitor.version}</u>
               </div>
             ))
-          ) : ('no hay')}
+          ) : ('Sin servicio')}
         </div>
       </div>
     </div>
