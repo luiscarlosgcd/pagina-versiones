@@ -19,8 +19,8 @@ const Home = () => {
           {monitores != null ? ( 
             monitores.map(monitor => (
               <div key={monitor.macAddress} className='content-home__data'>
-                <b href="#" className="content-home__data-single">{monitor.tipo}</b>
-                <a href="#" className="content-home__data-single">Grupo: {monitor.group}</a>
+                <b href="#" className="content-home__data-title ">{monitor.group}</b>
+                <a href="#" className="content-home__data-single">Tipo: {monitor.tipo}</a>
                 <a href="#" className="content-home__data-single">MAC Address: {monitor.macAddress}</a>
                 <a href="#" className="content-home__data-single">IP Address: {monitor.ipAddress}</a>
                 <u href="#" className="content-home__data-single">Version: {monitor.version}</u>

@@ -21,18 +21,20 @@
 
 .app__navbar-hamburger{
     color: black;
+    transition: 350ms;
+}
+
+.app__navbar-hamburger.active{
+    margin-left: 250px;
+    transition: 350ms;
 }
 
 .app__navbar-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 20px;
-    font-size: 20px;
+    padding-left: 20px;
 }
 
 .app__navbar-logo img {
-    width: 120px;
+    width: 40px;
 }
 
 .app__navbar-links {

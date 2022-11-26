@@ -1,5 +1,7 @@
-import REDPACIFICO1 from '../assets/REDPACIFICO1.png';
+import LogoLitrixBlanco from '../assets/LogoLitrixBlanco.svg'
+import LogoLitrix from '../assets/LogoLitrix.png'
 
 export default{
-    REDPACIFICO1
+    LogoLitrixBlanco,
+    LogoLitrix
 };

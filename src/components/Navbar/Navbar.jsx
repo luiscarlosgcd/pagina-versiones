@@ -19,18 +19,18 @@ const Navbar = () => {
       <>
         <div className="app__navbar">
         
-          <div className='app__navbar-hamburger'>
+          <div className={sidebar ? 'app__navbar-hamburger active' : 'app__navbar-hamburger'}>
             <Link to='#' className = 'app__navbar-hamburger'>
               <GiHamburgerMenu onClick={showSidebar}/>
             </Link>
           </div>
 
           <div className='app__navbar-logo'>
-            <img src={images.REDPACIFICO1} alt='Logo Red Pacifico'/>
+            <img src={images.LogoLitrix} alt='Logo Red Pacifico'/>
           </div>
 
           <div className="app__navbar-login">
-            <a href="#login" className="p__opensans">Version</a>
+            <a href="#login" className="p__opensans">Versiones</a>
           </div>
           
         </div>
@@ -41,7 +41,7 @@ const Navbar = () => {
             <ul className='nav-sidemenu__items'>
 
               <div className='sidebar-heading'>
-                <img src={images.REDPACIFICO1} alt='Logo Red Pacifico'/>
+                <img src={images.LogoLitrixBlanco} alt='Logo Litrix'/>
               </div>
 
               {SidebarData.map((item, index) => {
