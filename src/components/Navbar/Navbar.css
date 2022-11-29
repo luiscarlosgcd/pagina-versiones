@@ -1,13 +1,15 @@
 .app__navbar {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     justify-content: space-between;
     align-items: center;
     background-color: #F7F7F7;
     padding: 20px;
     height: 80px;
-    position: fixed;
     background-size: cover;
+    position: fixed;
+    z-index: 1;
 }
 
 .app__navbar-background{
@@ -22,15 +24,17 @@
 .app__navbar-hamburger{
     color: black;
     transition: 350ms;
+    z-index: 3;
+    padding-top: -80px;
 }
 
 .app__navbar-hamburger.active{
-    margin-left: 250px;
+    margin-left: 240px;
     transition: 350ms;
 }
 
 .app__navbar-logo {
-    padding-left: 20px;
+    justify-content: center;
 }
 
 .app__navbar-logo img {
@@ -56,13 +60,13 @@
     color: lightblue;
 }
 
-.app__navbar-login {
+.app__navbar-version {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.app__navbar-login a {
+.app__navbar-version a {
     margin: 0 1rem;
     text-decoration: none;
     transition: .5s ease;
@@ -71,7 +75,7 @@
 
 
 .app__navbar-logo{
-    width:100px;
+    width: 100px;
     height: auto;
 }
 
@@ -87,20 +91,21 @@
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 690px) {
     .app__navbar {
         padding: 1rem;
+        grid-template-columns: auto auto;
     }
 
-    .app__navbar-login {
+    .app__navbar-version {
         display: none;
     }
 
     .app__navbar-logo img {
-        width: 100px;
+        width: 30px;
     }
 
-    .app__navbar{
-        padding-right: 50px
+    .app__navbar-logo{
+        padding-left: 37px;
     }
 }

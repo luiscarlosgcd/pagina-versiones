@@ -12,6 +12,8 @@
     top: 0px;
     right: 20px;
     padding-top: 35px;
+    z-index: -1;
+    overflow: auto;
 }
 
 .nav-sidemenu.active{
@@ -32,6 +34,7 @@
     transition: 850ms;
     top: 80px;
     right: 30px;
+    z-index: 1;
 }
 
 .nav-sidemenu__background.active{
@@ -41,7 +44,7 @@
 
 .nav-text{
     display: block;
-    padding: 8px 0px 8px 20px;
+    padding: 8px 0px 20px 20px;
     list-style: none;
     height: 60px;
 }
@@ -60,7 +63,7 @@
 }
 
 .nav-text a:hover{
-    color: red;
+    color: #3dcccd;
 }
 
 .nav-menu__items{
@@ -72,7 +75,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 20px 120px 20px;
+    margin: 0px 20px 150px 20px;
     border-radius: 8px;
 }
 

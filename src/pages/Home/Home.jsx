@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 import { getMonitor } from '../../api/Monitor';
+import images from '../../constants/images';
 
 const Home = () => {
 
@@ -26,7 +27,7 @@ const Home = () => {
                 <u href="#" className="content-home__data-single">Version: {monitor.version}</u>
               </div>
             ))
-          ) : ('Sin servicio')}
+          ) : (<img id='content-home__loading' src={images.loadingGIF} alt='Cargando...'/>)}
         </div>
       </div>
     </div>
