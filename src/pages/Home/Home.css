@@ -19,7 +19,7 @@
 
 .content-home__center{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     margin: 0;
 }
 
