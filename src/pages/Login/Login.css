@@ -1,6 +1,6 @@
 .login{
     margin: 0;
-    height: 90vh;
+    height: 100vh;
     font-family: arial;
     display: flex;
     justify-content: center;
@@ -61,4 +61,8 @@ input[type = text]{
 #boton{
     color:white;
     text-decoration: none;
+}
+
+#login__heading{
+    padding-left: 0px;
 }
