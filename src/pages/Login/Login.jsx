@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const login = () => {
   return (
     
-    <div className = 'login'>
-      <h1 id="loginHeader">Iniciar sesion</h1>
-      <div className = 'login__form'>
+    <div>
+      <h1>Iniciar sesion</h1>
+      <div className = 'login'>
           <form>
             <div>
               <div>
