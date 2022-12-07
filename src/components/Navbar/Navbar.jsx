@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
-import { SidebarData } from '../Sidebar/SidebarData.jsx';
 import '../Sidebar/Sidebar.css';
 import images from '../../constants/images';
+import {sidebarData} from '../../constants/data';
 
 const Navbar = () => {
 
@@ -42,7 +42,7 @@ const Navbar = () => {
                 <img src={images.LogoLitrixBlanco} alt='Logo Litrix'/>
               </div>
 
-              {SidebarData.map((item, index) => {
+              {sidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>

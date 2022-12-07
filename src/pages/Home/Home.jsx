@@ -3,6 +3,7 @@ import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 import { getMonitor } from '../../api/Monitor';
 import images from '../../constants/images';
+import Card from '../../components/Card/Card';
 
 const Home = () => {
 
@@ -11,16 +12,19 @@ const Home = () => {
   useEffect(() => {
     getMonitor(setMonitor)
   },[])
+  
+  let i = 1;
 
   return (
     <div className='home'>
       <Navbar/>
       <div className='content-home'>
         <div className='content-home__center'>
+  
           {monitores != null ? ( 
             monitores.map(monitor => (
               <div key={monitor.macAddress} className='content-home__data'>
-                <b href="#" className="content-home__data-title ">{monitor.group}</b>
+                <b href="#" className="content-home__data-title ">{monitor.nombre}</b>
                 <a href="#" className="content-home__data-single">Tipo: {monitor.tipo}</a>
                 <a href="#" className="content-home__data-single">MAC Address: {monitor.macAddress}</a>
                 <a href="#" className="content-home__data-single">IP Address: {monitor.ipAddress}</a>
@@ -29,6 +33,10 @@ const Home = () => {
             ))
           ) : (<img id='content-home__loading' src={images.loadingGIF} alt='Cargando...'/>)}
         </div>
+        
+        <Card/>
+
+
       </div>
     </div>
   )

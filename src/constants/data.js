@@ -1,7 +1,6 @@
 
-import React from 'react';
 
-export const SidebarData = [
+const sidebarData = [
     {
         title: 'Inicio',
         path: '/home',
@@ -11,6 +10,9 @@ export const SidebarData = [
         title: 'Monitor',
         path: '/monitor',
         cName: 'nav-text'
-    },
+    }
 ]
 
+export {
+    sidebarData
+};
