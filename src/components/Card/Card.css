@@ -1,44 +1,53 @@
+.tarjeta__almacen{
+    display: flex;
+    flex-direction: row;
+}
 
 .tarjeta{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid lightgrey;
+    box-shadow: 0px 1px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: helvetica;
-    border-radius: 5px;
-    padding: 7px;
-    margin-bottom: 20px;
+    border-radius: 9px;
+    padding: 15px 20px 10px 20px;
+    margin: 25px;
 }
 
 .tarjeta__grupo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 17px;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+}
+
+.tarjeta__tipos{
+    padding-top: 13px;
+    border-top: 1px solid black;
 }
 
 .tarjeta__tipo{
-    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    /*border-bottom: 1px solid black;*/
+    padding-bottom: 6px;
+    margin-right: -50px;
 }
 
 .tarjeta__grupo-tipo{
     font-size: 15px;
     font-weight: 900;
     padding-top: 10px;
-}
-
-.tarjeta__grupo-datos-columna{
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
+    /*padding: 10px 0px 0px 15px;*/
 }
 
 .tarjeta__grupo-datos-fila{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .tarjeta__grupo-dato{
-    padding: 10px 20px 0 0;
+    padding: 10px 50px 5px 0;
 }

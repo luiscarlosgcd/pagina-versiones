@@ -1,140 +1,98 @@
 import React, {useEffect, useState} from 'react';
-import './Card.css'
+import { GiConsoleController } from 'react-icons/gi';
 import { getMonitor } from '../../api/Monitor';
+import { BiCaretDown } from 'react-icons/bi'
+import { BiCaretUp } from 'react-icons/bi'
+import './Card.css';
 
-
-const Card = () => {
+const Cards = () => {
 
     const [monitores, setMonitor] = useState(null)
 
-    useEffect(() => {
-    getMonitor(setMonitor)
-    },[])
+    useEffect(() => {getMonitor(setMonitor)},[])
 
-    const list = []
-    let contador = 0
-    let contador2 = 0, contador3 = 0
-    let post1 = []
-    let post2 = []
 
-   
-    /*lista con cada id presente*/
-    /*if(monitores != null){ 
-        for(let i = 0; i < monitores.length; i++){
-            if(contador == 0){
-                list[contador] = monitores[i].clienteId
-                contador++
-            } else if (!exist(list, monitores[i].clienteId)){
-                list[contador] = monitores[i].clienteId
-                contador++
-            }
-        }
-    
-    }*/
-
-    if(monitores != null){
-        monitores.map((monitor) => {
-            if(contador == 0){
-                list[contador] = monitor.clienteId
-                contador++
-            } else if (!exist(list, monitor.clienteId)){
-                list[contador] = monitor.clienteId
-                contador++
-            }
-        })
-    }
+    let list = [], post1 = [], post2 = []
+    let contador1 = 0, contador2 = 0, contador3 = 0
 
     function exist(list, data){
-        list.map((li) => {
-            if(li == data){
-                return true
-            }
-            return false
-        })
+        let final = false
+        list.map((li) => (
+            li == data && (final = true)
+        ))
+        return final
     }
 
-    function existencia(list, data){
-        for(let i = 0; i < list.length; i++){
-            if(list[i] == data){
-                return true
-            }
-        }
-        return false
+    function create(monitores){
+        let contador = 0
+        let list = []
+        monitores != null && monitores.map(
+            (monitor) => ((contador === 0) ? 
+            (list[contador] = monitor.clienteId, contador++): 
+            ((!exist(list, monitor.clienteId)) && (list[contador] = monitor.clienteId, contador++)))
+        )
+        return list
     }
+
+    {list = create(monitores)}
+
 
 
     return (
-
-        <div>
+        
+        <div className='tarjeta__almacen'>
             {
-                (() => {
-                    
-                    for(let i = 0; i < monitores.length; i++){/*bucle para cada monitor*/
+                monitores != null && monitores.map((monitor) => {
                     post2 = []
-                        if(list[contador2] != monitores[i].clienteId){ /*estamos registrando un nuevo cliente*/
-                            contador2++
-                        }
-                        
 
-                        if(list[contador2] == monitores[i].clienteId && (contador3 <= contador2)){
-                            
-                            
-                            contador3++
-                            /*
-                            if(contador3 > contador2){
-                                continue
-                            }*/
-                            post1.push(
-                                <div className='tarjeta'>
-                                    <div className='tarjeta__grupo'>
-                                        <b>{monitores[i].nombre}</b>
+                    list[contador1] != monitor.clienteId && contador1++
+
+                    if(list[contador1] == monitor.clienteId && (contador2 <= contador1)){
+                        contador2++
+                        post1.push(
+                            <div className='tarjeta'>
+                                <div className='tarjeta__grupo'>
+                                    <b>{monitor.nombre}</b>
+                                    <div>
+                                        <BiCaretUp/>
                                     </div>
-
-                                    { /* aqui es el problema */
-                                        (() => {
-                                            
-                                            for(let k = 0; k < monitores.length; k++){
-                                                
-                                                if (monitores[k].clienteId == list[contador2]){
-
-                                                    post2.push(
-                                                        <div className= 'tarjeta__tipo'>
-
-                                                            <div className='tarjeta__grupo-tipo'>
-                                                                <a>{monitores[k].tipo}</a>
-                                                            </div>
-
-                                                            <div className='tarjeta__grupo-datos'>
-                                                                <div className='tarjeta__grupo-datos-fila'>
-                                                                    <a className='tarjeta__grupo-dato'>{monitores[k].ipAddress}</a>
-                                                                    <a className='tarjeta__grupo-dato'>{monitores[k].macAddress}</a>
-                                                                    <a className='tarjeta__grupo-dato'>{monitores[k].version}</a>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    )
-                                                }
-                                            }
-
-                                            return post2
-
-                                        })()
-                                    }
-
                                 </div>
-                            )
-                        }
+                                <div className='tarjeta__tipos'>
+                                {
+                                    
+                                    monitores.map((monitor) => {
+                                        monitor.clienteId == list[contador1] && post2.push(
+                                            <div className= 'tarjeta__tipo'>
+
+                                                <div className='tarjeta__grupo-tipo'>
+                                                    <a>{monitor.tipo}</a>
+                                                </div>
+
+                                                <div className='tarjeta__grupo-datos'>
+                                                    <div className='tarjeta__grupo-datos-fila'>
+                                                        <a className='tarjeta__grupo-dato'>{monitor.ipAddress}</a>
+                                                        <a className='tarjeta__grupo-dato'>{monitor.macAddress}</a>
+                                                        <a className='tarjeta__grupo-dato'>{monitor.version}</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+                                </div>
+                                {post2}
+                            </div>
+                        )
                     }
+                })
 
-                    return post1
-                    
-                })()
             }
-            
 
+            {post1}
         </div>
+
     )
 }
 
-export default Card
+export default Cards
