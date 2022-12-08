@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import { getMonitor } from '../../api/Monitor';
 import images from '../../constants/images';
 import Card from '../../components/Card/Card';
+import Cards from '../../components/Card2/Cards'
 
 const Home = () => {
 
@@ -13,7 +14,7 @@ const Home = () => {
     getMonitor(setMonitor)
   },[])
   
-  let i = 1;
+
 
   return (
     <div className='home'>
@@ -31,12 +32,12 @@ const Home = () => {
                 <u href="#" className="content-home__data-single">Version: {monitor.version}</u>
               </div>
             ))
+            
           ) : (<img id='content-home__loading' src={images.loadingGIF} alt='Cargando...'/>)}
         </div>
+
+        {monitores != null && <Cards/>}
         
-        <Card/>
-
-
       </div>
     </div>
   )

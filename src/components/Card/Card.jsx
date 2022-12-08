@@ -13,20 +13,44 @@ const Card = () => {
 
     const list = []
     let contador = 0
-    let id, contador2 = 0, contador3 = 0
+    let contador2 = 0, contador3 = 0
     let post1 = []
     let post2 = []
 
-    if(monitores != null){ /*lista con cada id presente*/
+   
+    /*lista con cada id presente*/
+    /*if(monitores != null){ 
         for(let i = 0; i < monitores.length; i++){
-            if(list.length == 0){
+            if(contador == 0){
                 list[contador] = monitores[i].clienteId
                 contador++
-            } else if (!existencia(list, monitores[i].clienteId)){
+            } else if (!exist(list, monitores[i].clienteId)){
                 list[contador] = monitores[i].clienteId
                 contador++
             }
         }
+    
+    }*/
+
+    if(monitores != null){
+        monitores.map((monitor) => {
+            if(contador == 0){
+                list[contador] = monitor.clienteId
+                contador++
+            } else if (!exist(list, monitor.clienteId)){
+                list[contador] = monitor.clienteId
+                contador++
+            }
+        })
+    }
+
+    function exist(list, data){
+        list.map((li) => {
+            if(li == data){
+                return true
+            }
+            return false
+        })
     }
 
     function existencia(list, data){
@@ -44,7 +68,6 @@ const Card = () => {
         <div>
             {
                 (() => {
-                    id = list[contador2] //empezamos el primero id de la lista
                     
                     for(let i = 0; i < monitores.length; i++){/*bucle para cada monitor*/
                     post2 = []
