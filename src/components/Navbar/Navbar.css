@@ -50,10 +50,6 @@
     color: white;
 }
 
-.app__navbar-links li {
-    margin: 0 1rem;
-    cursor: pointer;
-}
 
 .app__navbar-links li:hover {
     color: lightblue;
@@ -70,7 +66,6 @@
     text-decoration: none;
     transition: .5s ease;
 }
-
 
 .app__navbar-logo{
     width: 100px;
@@ -92,7 +87,7 @@
 @media screen and (max-width: 690px) {
     .app__navbar {
         padding: 1rem;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr auto;
     }
 
     .app__navbar-version {
@@ -104,6 +99,10 @@
     }
 
     .app__navbar-logo{
-        padding-left: 37px;
+        padding-left: 85px;
+    }
+    
+    .app__navbar-version.active{
+        display: none;
     }
 }

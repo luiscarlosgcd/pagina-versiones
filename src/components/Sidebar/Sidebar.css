@@ -2,7 +2,7 @@
     background-color: #393E46;
     color: white;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     width: 240px;
     height: 100vh;
     position: fixed;
@@ -24,7 +24,7 @@
 
 .nav-sidemenu__background{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     width: 260px;
     height: 100%;
     position: fixed;

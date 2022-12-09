@@ -21,6 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
     font-size: 17px;
+    font-weight: 700;
     margin: 1px;
 }
 
@@ -56,12 +57,39 @@
     justify-content: space-between;
 }
 
+.tarjeta__grupo-datos-titulo{
+    font-size: 13px;
+    padding-top: 5px;
+    color: #303234;
+}
+
+.tarjeta__grupo-datos{
+    font-size: 14.5px;
+}
+
 .tarjeta__grupo-dato{
-    padding: 10px 0 5px 0;
+    padding: 3px 0 2px 0;
 }
 
 .tarjeta__open-icon{
     cursor: pointer;
+}
+
+.tarjeta__grupo-version{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tarjeta__grupo-medio{
+    margin-left: 15px;
+}
+
+.tarjeta__grupo-box{
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    margin-left: 7px;
 }
 
 @media screen and (max-width: 400px) {

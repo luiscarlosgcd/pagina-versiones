@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { GiConsoleController } from 'react-icons/gi';
 import { getMonitor } from '../../api/Monitor';
 import { BiCaretDown } from 'react-icons/bi'
 import { BiCaretUp } from 'react-icons/bi'
@@ -23,12 +22,12 @@ const Cards = () => {
 
 
     let list = [], post1 = [], post2 = []
-    let contador1 = 0, contador2 = 0, contador3 = 0
+    let contador1 = 0, contador2 = 0
 
     function exist(list, data){
         let final = false
         list.map((li) => (
-            li == data && (final = true)
+            li === data && (final = true)
         ))
         return final
     }
@@ -44,44 +43,55 @@ const Cards = () => {
         return list
     }
 
-    {list = create(monitores)}
+    list = create(monitores)
 
 
     return (
         
         <div className='tarjeta__almacen'>
             {
-                monitores != null && monitores.map((monitor) => {
+                monitores != null && monitores.forEach((monitor) => {
                     post2 = []
 
-                    list[contador1] != monitor.clienteId && contador1++
+                    list[contador1] !== monitor.clienteId && contador1++
 
-                    if(list[contador1] == monitor.clienteId && (contador2 <= contador1)){
+                    if(list[contador1] === monitor.clienteId && (contador2 <= contador1)){
                         contador2++
                         post1.push(
                             <div className='tarjeta' key={monitor.macAddress}>
+
                                 <div className='tarjeta__grupo'>
-                                    <b>{monitor.nombre}</b>
+                                    <button>{monitor.nombre}</button>
                                     <div className='tarjeta__open-icon'>
                                         {infoKey[monitor.macAddress] ? <BiCaretUp onClick={infoClick(monitor.macAddress)}/>: <BiCaretDown onClick={infoClick(monitor.macAddress)}/>}
                                     </div>
                                 </div>
+                                
                                 <div className={infoKey[monitor.macAddress] ? 'tarjeta__tipos active' : 'tarjeta__tipos'}>
                                 {
                                     
-                                    monitores.map((monitor) => {
-                                        monitor.clienteId == list[contador1] && post2.push(
+                                    monitores.forEach((monitor) => {
+                                        monitor.clienteId === list[contador1] && post2.push(
                                             <div className= 'tarjeta__tipo' key={monitor.macAddress}>
 
                                                 <div className='tarjeta__grupo-tipo'>
-                                                    <a>{monitor.tipo}</a>
+                                                    <button>{monitor.tipo}</button>
+                                                </div>
+
+                                                <div className='tarjeta__grupo-datos-fila tarjeta__grupo-datos-titulo'>
+                                                    <b className='tarjeta__grupo-dato'>IP Address</b>
+                                                    <b className='tarjeta__grupo-dato'>MAC Address</b>
+                                                    <b className='tarjeta__grupo-dato'>Version</b>
                                                 </div>
 
                                                 <div className='tarjeta__grupo-datos'>
                                                     <div className='tarjeta__grupo-datos-fila'>
-                                                        <a className='tarjeta__grupo-dato'>{monitor.ipAddress}</a>
-                                                        <a className='tarjeta__grupo-dato'>{monitor.macAddress}</a>
-                                                        <a className='tarjeta__grupo-dato'>{monitor.version}</a>
+                                                        <button className='tarjeta__grupo-dato'>{monitor.ipAddress}</ button>
+                                                        <button className='tarjeta__grupo-dato tarjeta__grupo-medio'>{monitor.macAddress}</button>
+                                                        <div className='tarjeta__grupo-version'>
+                                                            <button className='tarjeta__grupo-dato'>{monitor.version}</button>
+                                                            <div className='tarjeta__grupo-box'/>
+                                                        </div>
                                                     </div>
                                                 </div>
 

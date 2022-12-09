@@ -27,8 +27,8 @@ const Navbar = () => {
             <img src={images.LogoLitrix} alt='Logo Red Pacifico'/>
           </div>
 
-          <div className="app__navbar-version">
-            <a href="#" className="p__opensans">Versiones</a>
+          <div className={sidebar ? "app__navbar-version active" : "app__navbar-version"}>
+            <button className="p__opensans">Version</button>
           </div>
           
         </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 return (
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>
-                      <a id="litrix" href='#'>{item.title}</a>
+                      <button id="litrix">{item.title}</button>
                     </Link>
                   </li>
                 );
