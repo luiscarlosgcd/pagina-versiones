@@ -40,11 +40,14 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 6px;
+    font-size: 15px;
 }
 
 .tarjeta__grupo-tipo{
     display: flex;
     padding-top: 10px;
+    font-weight: 700;
+
 }
 
 .tarjeta__grupo-datos-fila{
