@@ -11,6 +11,16 @@ const Cards = () => {
 
     useEffect(() => {getMonitor(setMonitor)},[])
 
+    const [infoKey, setInfoKey] = useState({});
+
+    const infoClick = (key) => () => {
+        setInfoKey(state => ({
+            ...state, // <-- copy previous state
+            [key]: !state[key] // <-- update value by index key
+        }));
+    };
+
+
 
     let list = [], post1 = [], post2 = []
     let contador1 = 0, contador2 = 0, contador3 = 0
@@ -37,7 +47,6 @@ const Cards = () => {
     {list = create(monitores)}
 
 
-
     return (
         
         <div className='tarjeta__almacen'>
@@ -50,19 +59,19 @@ const Cards = () => {
                     if(list[contador1] == monitor.clienteId && (contador2 <= contador1)){
                         contador2++
                         post1.push(
-                            <div className='tarjeta'>
+                            <div className='tarjeta' key={monitor.macAddress}>
                                 <div className='tarjeta__grupo'>
                                     <b>{monitor.nombre}</b>
-                                    <div>
-                                        <BiCaretUp/>
+                                    <div className='tarjeta__open-icon'>
+                                        {infoKey[monitor.macAddress] ? <BiCaretUp onClick={infoClick(monitor.macAddress)}/>: <BiCaretDown onClick={infoClick(monitor.macAddress)}/>}
                                     </div>
                                 </div>
-                                <div className='tarjeta__tipos'>
+                                <div className={infoKey[monitor.macAddress] ? 'tarjeta__tipos active' : 'tarjeta__tipos'}>
                                 {
                                     
                                     monitores.map((monitor) => {
                                         monitor.clienteId == list[contador1] && post2.push(
-                                            <div className= 'tarjeta__tipo'>
+                                            <div className= 'tarjeta__tipo' key={monitor.macAddress}>
 
                                                 <div className='tarjeta__grupo-tipo'>
                                                     <a>{monitor.tipo}</a>
@@ -80,8 +89,8 @@ const Cards = () => {
                                         )
                                     })
                                 }
-                                </div>
                                 {post2}
+                                </div>
                             </div>
                         )
                     }

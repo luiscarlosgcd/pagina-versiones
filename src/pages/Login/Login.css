@@ -6,6 +6,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background: white;
+    position: fixed;
+    width: 100%;
 }
 
 #loginHeader{

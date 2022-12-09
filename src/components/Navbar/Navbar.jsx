@@ -46,7 +46,7 @@ const Navbar = () => {
                 return (
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>
-                      <a id="hola" href='#'>{item.title}</a>
+                      <a id="litrix" href='#'>{item.title}</a>
                     </Link>
                   </li>
                 );

@@ -2,24 +2,22 @@
     background-color: #f7f7f7;
     padding: 0 20px 20px;
     width: 100%;
-    
 }
 
 .content-home{
     display: flex;
-    padding-top: 50px;
-    justify-content: center;
+    padding-top: 120px;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    min-height: 97vh;
+    min-height: 86vh;
     max-height: 100%;
-    background-color: white;
+    background-color: white
+
 }
 
 .content-home__center{
     display: grid;
-    grid-template-columns: auto auto auto;
     margin: 0;
 }
 

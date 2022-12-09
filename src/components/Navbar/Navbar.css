@@ -8,7 +8,6 @@
     padding: 20px;
     height: 80px;
     background-size: cover;
-    position: fixed;
     z-index: 1;
 }
 
@@ -67,10 +66,9 @@
 }
 
 .app__navbar-version a {
-    margin: 0 1rem;
+    margin: 0 0 0 1rem ;
     text-decoration: none;
     transition: .5s ease;
-    margin-right: 40px;
 }
 
 
