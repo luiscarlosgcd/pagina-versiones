@@ -87,6 +87,7 @@
     .app__navbar {
         padding: 1rem;
         grid-template-columns: 1fr auto;
+        justify-content: space-between;
     }
 
     .app__navbar-version {
@@ -100,8 +101,10 @@
     .app__navbar-logo{
         padding-left: 85px;
     }
-    
-    .app__navbar-version.active{
-        display: none;
+}
+
+@media screen and (max-width: 450px){
+    .app__navbar-logo{
+        display: none
     }
 }

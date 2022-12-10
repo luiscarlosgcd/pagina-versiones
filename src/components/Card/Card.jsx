@@ -78,19 +78,35 @@ const Cards = () => {
                                                     <button>{monitor.tipo}</button>
                                                 </div>
 
-                                                <div className='tarjeta__grupo-datos-fila tarjeta__grupo-datos-titulo'>
-                                                    <b className='tarjeta__grupo-dato'>IP Address</b>
-                                                    <b className='tarjeta__grupo-dato'>MAC Address</b>
-                                                    <b className='tarjeta__grupo-dato'>Version</b>
-                                                </div>
-
                                                 <div className='tarjeta__grupo-datos'>
                                                     <div className='tarjeta__grupo-datos-fila'>
-                                                        <button className='tarjeta__grupo-dato'>{monitor.ipAddress}</ button>
-                                                        <button className='tarjeta__grupo-dato tarjeta__grupo-medio'>{monitor.macAddress}</button>
-                                                        <div className='tarjeta__grupo-version'>
-                                                            <button className='tarjeta__grupo-dato'>{monitor.version}</button>
-                                                            <div className='tarjeta__grupo-box'/>
+
+                                                        <div className='tarjeta__grupo-conjunto'>
+                                                            <div>
+                                                                <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>IP Address</b>
+                                                            </div>
+                                                            <div>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.ipAddress}</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className='tarjeta__grupo-conjunto'>
+                                                            <div>
+                                                                <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>MAC Address</b>
+                                                            </div>
+                                                            <div>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.macAddress}</button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className='tarjeta__grupo-versiones'>
+                                                            <div>
+                                                                <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>Version</b>
+                                                            </div>
+                                                            <div className='tarjeta__grupo-version'>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.version}</button>
+                                                                <div className='tarjeta__grupo-box'/>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
