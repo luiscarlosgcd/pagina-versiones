@@ -16,13 +16,17 @@
 
 }
 
+.content-home.active{
+    justify-content: center;
+}
+
 .content-home__center{
-    display: grid;
+    display: flex;
     margin: 0;
 }
 
 .content-home__data{
-    display: grid;
+    display: flex;
     padding: 10px 30px;
     margin: 10px 10px;
     line-height: 25px;
@@ -36,6 +40,10 @@
 .content-home__data-title{
     text-align: center;
     margin-bottom: 12px;
+}
+
+#content-home__loading{
+    display: flex;
 }
 
 #content-home__loading{

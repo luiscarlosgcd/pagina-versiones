@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className='home'>
       <Navbar/>
-      <div className='content-home'>
+      <div className={monitores != null ? 'content-home' : 'content-home active'}>
         <div className='content-home__center'>
   
           {monitores != null ? ( 
