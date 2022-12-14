@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { getMonitor } from '../../api/Monitor';
+import { getMonitor, getVersion } from '../../api/Monitor';
 import { BiCaretDown } from 'react-icons/bi'
 import { BiCaretUp } from 'react-icons/bi'
 import './Card.css';
@@ -10,7 +10,11 @@ const Cards = () => {
 
     useEffect(() => {getMonitor(setMonitor)},[])
 
-    const [infoKey, setInfoKey] = useState({});
+    const [infoKey, setInfoKey] = useState({})
+
+    const [version, setVersion] = useState({}) 
+
+    useEffect(() => {getVersion(setVersion)},[]) //me da la version actualizada
 
     const infoClick = (key) => () => {
         setInfoKey(state => ({
@@ -18,8 +22,6 @@ const Cards = () => {
             [key]: !state[key] // <-- update value by index key
         }));
     };
-
-
 
     let list = [], post1 = [], post2 = []
     let contador1 = 0, contador2 = 0
@@ -44,7 +46,7 @@ const Cards = () => {
     }
 
     list = create(monitores)
-
+    console.log(monitores)
 
     return (
         
@@ -86,7 +88,7 @@ const Cards = () => {
                                                                 <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>IP Address</b>
                                                             </div>
                                                             <div>
-                                                                <button className='tarjeta__grupo-dato'>{monitor.ipAddress}</button>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.ipAddress !== '' ? monitor.ipAddress: '------------------'}</button>
                                                             </div>
                                                         </div>
 
@@ -95,17 +97,17 @@ const Cards = () => {
                                                                 <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>MAC Address</b>
                                                             </div>
                                                             <div>
-                                                                <button className='tarjeta__grupo-dato'>{monitor.macAddress}</button>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.macAddress !== '' ? monitor.macAddress: '-----------------'}</button>
                                                             </div>
                                                         </div>
 
-                                                        <div className='tarjeta__grupo-versiones'>
+                                                        <div className='tarjeta__grupo-versiones tarjeta__grupo-conjunto'>
                                                             <div>
                                                                 <b className='tarjeta__grupo-dato tarjeta__grupo-datos-titulo'>Version</b>
                                                             </div>
                                                             <div className='tarjeta__grupo-version'>
-                                                                <button className='tarjeta__grupo-dato'>{monitor.version}</button>
-                                                                <div className='tarjeta__grupo-box'/>
+                                                                <button className='tarjeta__grupo-dato'>{monitor.version !== '' ? monitor.version: '-----------'}</button>
+                                                                <div className={monitor.version === version.version ? 'tarjeta__grupo-box green': 'tarjeta__grupo-box'}/>
                                                             </div>
                                                         </div>
                                                     </div>

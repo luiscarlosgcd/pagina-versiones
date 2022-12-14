@@ -1,16 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Monitor.css';
 import Navbar from '../../components/Navbar/Navbar';
+import { getMonitor } from '../../api/Monitor';
+import images from '../../constants/images';
+import Card from '../../components/Card/Card'
 
-const Monitor = () => {
+const Home = () => {
+
+  const [monitores, setMonitor] = useState(null)
+
+  useEffect(() => {
+    getMonitor(setMonitor)
+  },[])
+  
+
+
   return (
-    <div>
+    <div className='home'>
       <Navbar/>
-      <div className='content-monitor'>
-        <h1>Monitor</h1>
+      <div className={monitores != null ? 'content-home' : 'content-home active'}>
+        <div className='content-home__center'>
+  
+          {monitores != null ? ( 
+            <div>
+              <Card/>
+            </div>
+          ) : (<img id='content-home__loading' src={images.loadingGIF} alt='Cargando...'/>)}
+        </div>
+        
       </div>
     </div>
   )
 }
 
-export default Monitor
+export default Home

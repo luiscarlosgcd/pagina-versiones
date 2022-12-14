@@ -2,14 +2,14 @@
 
 const sidebarData = [
     {
-        title: 'Inicio',
-        path: '/home',
-        cName: 'nav-text'
-    },
-    {
         title: 'Monitor',
         path: '/monitor',
-        cName: 'nav-text'
+        cName: 'side-text'
+    },
+    {
+        title: 'Componentes',
+        path: '/componentes',
+        cName: 'side-text'
     }
 ]
 

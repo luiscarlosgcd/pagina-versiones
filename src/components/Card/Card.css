@@ -57,9 +57,6 @@
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
-    /*display: flex;
-    flex-direction: row;
-    justify-content: space-between;*/
 }
 
 .tarjeta__grupo-conjunto{
@@ -94,7 +91,7 @@
 }
 
 .tarjeta__grupo-versiones{
-    margin-right: 5px;
+    margin-right: -10px;
 }
 
 .tarjeta__grupo-box{
@@ -102,6 +99,10 @@
     height: 8px;
     background-color: red;
     margin-left: 7px;
+}
+
+.tarjeta__grupo-box.green{
+background-color: #71C562;
 }
 
 @media screen and (max-width: 400px) {

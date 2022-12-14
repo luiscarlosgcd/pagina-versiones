@@ -23,7 +23,7 @@ const login = () => {
             </div>
 
             <div className='login__input'>
-              <button className='login__boton'><Link id='boton' to='/home'>Enviar</Link></button> 
+              <button className='login__boton'><Link id='boton' to='/monitor'>Enviar</Link></button> 
             </div>
           </div>
         </form>
