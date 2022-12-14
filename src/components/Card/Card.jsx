@@ -46,7 +46,6 @@ const Cards = () => {
     }
 
     list = create(monitores)
-    console.log(monitores)
 
     return (
         
@@ -107,7 +106,9 @@ const Cards = () => {
                                                             </div>
                                                             <div className='tarjeta__grupo-version'>
                                                                 <button className='tarjeta__grupo-dato'>{monitor.version !== '' ? monitor.version: '-----------'}</button>
-                                                                <div className={monitor.version === version.version ? 'tarjeta__grupo-box green': 'tarjeta__grupo-box'}/>
+                                                                <div className={monitor.version === version.version ? 'circulo__grande green': 'circulo__grande'}>
+                                                                    <div className={monitor.version === version.version ? 'circulo__pequeño green': 'circulo__pequeño'}/>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

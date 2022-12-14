@@ -91,19 +91,35 @@
 }
 
 .tarjeta__grupo-versiones{
-    margin-right: -10px;
+    margin-right: -7px;
 }
 
-.tarjeta__grupo-box{
-    width: 8px;
-    height: 8px;
-    background-color: red;
+.circulo__grande{
+    display: flex;
+    border: 2px solid red;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
     margin-left: 7px;
 }
 
-.tarjeta__grupo-box.green{
-background-color: #71C562;
+.circulo__grande.green{
+    border: 2px solid #71C562;
 }
+
+.circulo__pequeño{
+    background: red;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.circulo__pequeño.green{
+    background: #71C562;
+}
+
 
 @media screen and (max-width: 400px) {
     .tarjeta {

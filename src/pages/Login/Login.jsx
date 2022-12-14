@@ -11,7 +11,7 @@ const login = () => {
         <form className = 'login__form'>
           <div>
             <div >
-              <label> Nombre:
+              <label> Usuario:
                 <input type = 'text'/>
               </label>
             </div>
