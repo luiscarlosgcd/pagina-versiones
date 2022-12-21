@@ -20,11 +20,13 @@ const Home = () => {
       <Navbar/>
       <div className={monitores != null ? 'content-home' : 'content-home active'}>
         <div className='content-home__center'>
-  
           {monitores != null ? ( 
-            <div>
+            <div className='content-monitor'>
+              <div className='content-monitor__titulo'>
+                <h1>Monitor de versiones Litrix</h1>
+              </div>
               <Card/>
-            </div>
+            </div>    
           ) : (<img id='content-home__loading' src={images.loadingGIF} alt='Cargando...'/>)}
         </div>
         

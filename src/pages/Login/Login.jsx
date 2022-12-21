@@ -1,37 +1,80 @@
-import React from 'react'
+import {useRef, useState, useEffect} from 'react'
 import './Login.css';
 import { Link } from 'react-router-dom';
 
-const login = () => {
+const Login = () => {
+
+  const userRef = useRef()
+  const errRef = useRef()
+
+  const [usuario, setUsuario] = useState('')
+  const [contraseña, setContraseña] = useState('')
+  const [errorMensaje, setErrorMensaje] = useState('')
+  const [aprobado, setAprobado] = useState(false)
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, [])
+
+  useEffect(() => {
+    setErrorMensaje('');
+  },[usuario, contraseña])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setUsuario('')
+    setContraseña('')
+    setAprobado(true);
+  }
+
   return (
     
-    <div className='login'>
+    <section className='login'>
       <div>
+        <p ref={errRef} aria-live='assertive'>{errorMensaje}</p>
         <h1 id='login__heading'>Iniciar sesion</h1>
-        <form className = 'login__form'>
+        <form className = 'login__form' onSubmit={handleSubmit}>
           <div>
-            <div >
-              <label> Usuario:
-                <input type = 'text'/>
+            <div>
+              <label htmlFor='username'>Usuario:
+                <input 
+                  type = 'text'
+                  ref = {userRef}
+                  autoComplete= 'off'
+                  onChange={(e) => setUsuario(e.target.value)}
+                  value={usuario}
+                  required
+                />
               </label>
             </div>
             
             <div>
-              <label> Contraseña:
-                <input type = 'text'/>
+              <label htmlFor='contraseña'>Contraseña:
+                <input 
+                  type = 'password'
+                  autoComplete= 'off'
+                  onChange={(e) => setContraseña(e.target.value)}
+                  value={contraseña}
+                  required
+                />
               </label>
             </div>
 
-            <div className='login__input'>
-              <button className='login__boton'><Link id='boton' to='/monitor'>Enviar</Link></button> 
+            <div id='login__button-center'>
+              <div id='login__button'>
+                <Link id='login__button-link' to='/monitor'>
+                  <button id='login__buton-button'>Enviar</button>
+                </Link>
+              </div>
             </div>
+
           </div>
         </form>
       </div>
-    </div>
+    </section>
   )
 }
 
 
 
-export default login
+export default Login

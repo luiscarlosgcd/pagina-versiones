@@ -11,10 +11,6 @@
     width: 100%;
 }
 
-#loginHeader{
-    margin-left: -69px;
-}
-
 .login__form{
     color: #393E46;
     background-color: #f7f7f7;
@@ -22,17 +18,9 @@
     flex-direction: column;
     justify-content: center;
     border: 1.5px solid #ccc;
-    padding: 45px 20px 30px 15px;
+    padding: 40px 20px 30px 15px;
+    height: 220px;
     border-radius: 3px;
-}
-
-.login__input{
-    display: flex;
-    justify-content: center;
-}
-
-.login__input :hover{
-    background-color: black;
 }
 
 input[type = text]{
@@ -45,27 +33,51 @@ input[type = text]{
     padding: 5px 10px;
 }
 
-.login__boton{
-    width: 30%;
-    margin-top: 15px;
-    border: none;
-    padding: 6px;
-    cursor: pointer;
-    text-align: center;
+input[type = password]{
+    margin-top: 5px;
+    margin-bottom: 14px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #393E46;
-    color: white;
+    padding: 5px 10px;
 }
 
-.login__boton :hover{
-    background-color: black;
-}
-
-#boton{
+#login__button-link{
     color:white;
     text-decoration: none;
 }
 
 #login__heading{
     padding-left: 0px;
+    font-size: 30px;
+}
+
+#login__button-center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 30px;
+    background: #393E46;
+    border-radius: 4px;
+}
+
+#login__button :hover{
+    background-color: black;
+    width:85px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+#login__buton-button{
+    width:85px;
+    height: 30px;
 }

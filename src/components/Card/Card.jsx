@@ -4,17 +4,38 @@ import { BiCaretDown } from 'react-icons/bi'
 import { BiCaretUp } from 'react-icons/bi'
 import './Card.css';
 
+import Modal from '../../components/Modal/Modal';
+import Historial from '../../components/Historial/Historial'
+
+
+
 const Cards = () => {
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const openModal = () => {
+        setIsOpen(isOpen => !isOpen)
+    }
+
+    const [OpenKey, setOpenKey] = useState({}) //almacena los indices de los elementos
+
+    const handleOpenClick = (key) => () => {
+        setOpenKey(state => ({
+            ...state, // <-- copy previous state
+            [key]: !state[key] // <-- update value by index key
+        }));
+    };
+
 
     const [monitores, setMonitor] = useState(null)
 
     useEffect(() => {getMonitor(setMonitor)},[])
 
-    const [infoKey, setInfoKey] = useState({})
-
     const [version, setVersion] = useState({}) 
 
     useEffect(() => {getVersion(setVersion)},[]) //me da la version actualizada
+
+    const [infoKey, setInfoKey] = useState({})
 
     const infoClick = (key) => () => {
         setInfoKey(state => ({
@@ -53,22 +74,21 @@ const Cards = () => {
             {
                 monitores != null && monitores.forEach((monitor) => {
                     post2 = []
-
                     list[contador1] !== monitor.clienteId && contador1++
 
                     if(list[contador1] === monitor.clienteId && (contador2 <= contador1)){
                         contador2++
                         post1.push(
-                            <div className='tarjeta' key={monitor.macAddress}>
+                            <div className='tarjeta' key={monitor.clienteId}>
 
                                 <div className='tarjeta__grupo'>
                                     <button>{monitor.nombre}</button>
                                     <div className='tarjeta__open-icon'>
-                                        {infoKey[monitor.macAddress] ? <BiCaretUp onClick={infoClick(monitor.macAddress)}/>: <BiCaretDown onClick={infoClick(monitor.macAddress)}/>}
+                                        {infoKey[monitor.clienteId] ? <BiCaretUp onClick={infoClick(monitor.clienteId)}/>: <BiCaretDown onClick={infoClick(monitor.clienteId)}/>}
                                     </div>
                                 </div>
                                 
-                                <div className={infoKey[monitor.macAddress] ? 'tarjeta__tipos active' : 'tarjeta__tipos'}>
+                                <div className={infoKey[monitor.clienteId] ? 'tarjeta__tipos active' : 'tarjeta__tipos'}>
                                 {
                                     
                                     monitores.forEach((monitor) => {
@@ -77,6 +97,10 @@ const Cards = () => {
 
                                                 <div className='tarjeta__grupo-tipo'>
                                                     <button>{monitor.tipo}</button>
+                                                    <button className='tarjeta__historial-link' onClick={openModal}>Ver historial</button>
+                                                    <Modal open={isOpen} onClose={openModal} setIsOpen={setIsOpen}>
+                                                        <Historial onClose={openModal} id={monitor.macAddress}/>
+                                                    </Modal>
                                                 </div>
 
                                                 <div className='tarjeta__grupo-datos'>

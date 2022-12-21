@@ -31,6 +31,13 @@
     transition: 350ms;
 }
 
+.app__navbar-titulo{
+    display: flex;
+    font-size: 15px;
+    font-weight: 600;
+    color: #303234;
+}
+
 .app__navbar-logo {
     justify-content: center;
 }
@@ -57,13 +64,7 @@
 .app__navbar-version {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-}
-
-.app__navbar-version a {
-    margin: 0 0 0 1rem ;
-    text-decoration: none;
-    transition: .5s ease;
+    font-size: 15px;
 }
 
 .app__navbar-logo{

@@ -1,0 +1,44 @@
+.historial{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.historial__encabezado{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.tabla__encabezado{
+    display: grid;
+    grid-template-columns: 15% auto;
+    font-size: 16px;
+    color: #303234;
+    border-bottom: 1px solid lightgray;
+    font-weight: 300;
+    padding: 0 0 15px 10px;
+}
+
+.tabla__contenido{
+    display: grid;
+    grid-template-columns: 15% auto;
+    font-size: 14px;
+    color: #303234;
+    border-bottom: 1px solid lightgray;
+    font-weight: 300;
+    padding: 15px 0 15px 10px;
+
+}
+
+#historial__titulo{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #303234;
+}
+
+#historial__button-close{
+    cursor: pointer;
+}

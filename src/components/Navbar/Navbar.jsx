@@ -1,17 +1,23 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { getVersion } from '../../api/Monitor';
 import './Navbar.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import '../Sidebar/Sidebar.css';
 import images from '../../constants/images';
 import {sidebarData} from '../../constants/data';
+import { BiLogOut } from 'react-icons/bi'
 
 const Navbar = () => {
 
   const[sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  const [version, setVersion] = useState({}) 
+
+  useEffect(() => {getVersion(setVersion)},[]) //me da la version actualizada
 
     return (
       <>
@@ -27,8 +33,8 @@ const Navbar = () => {
             <img src={images.LogoLitrix} alt='Logo Red Pacifico'/>
           </div>
 
-          <div className={sidebar ? "app__navbar-version active" : "app__navbar-version"}>
-            <button className="p__opensans">Version</button>
+          <div className="app__navbar-version f__sans-serif">
+            <button>Version actual: {version.version}</button>
           </div>
           
         </div>
@@ -51,7 +57,7 @@ const Navbar = () => {
                   </li>
                 );
               })}
-
+              
             </ul>
 
           </nav>
