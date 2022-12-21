@@ -2,21 +2,21 @@ import React, { useRef, useEffect, useCallback } from 'react'
 import ReactDom from 'react-dom'
 import './Modal.css'
 
-export default function Modal({ open, setIsOpen, onClose, children }) {
+export default function Modal({ open, setOpenKey, children}) {
 
     const modalRef = useRef()
     
     const closeModal = e => {
         if (modalRef.current === e.target) {
-            setIsOpen(false)
+            setOpenKey(false)
         }
     }
 
     const keyPress = useCallback( e => { //esc escape
         if(e.key === 'Escape' && open){
-            setIsOpen(false)
+            setOpenKey(false)
         }
-    }, [setIsOpen, open])
+    }, [setOpenKey, open])
 
     useEffect(() => {
         document.addEventListener('keydown', keyPress)

@@ -11,13 +11,7 @@ import Historial from '../../components/Historial/Historial'
 
 const Cards = () => {
 
-    const [isOpen, setIsOpen] = useState(false)
-
-    const openModal = () => {
-        setIsOpen(isOpen => !isOpen)
-    }
-
-    const [OpenKey, setOpenKey] = useState({}) //almacena los indices de los elementos
+    const [openKey, setOpenKey] = useState({}) //almacena los indices de los elementos
 
     const handleOpenClick = (key) => () => {
         setOpenKey(state => ({
@@ -97,10 +91,12 @@ const Cards = () => {
 
                                                 <div className='tarjeta__grupo-tipo'>
                                                     <button>{monitor.tipo}</button>
-                                                    <button className='tarjeta__historial-link' onClick={openModal}>Ver historial</button>
-                                                    <Modal open={isOpen} onClose={openModal} setIsOpen={setIsOpen}>
-                                                        <Historial onClose={openModal} id={monitor.macAddress}/>
+
+                                                    <button className='tarjeta__historial-link' onClick={handleOpenClick(monitor.macAddress)}>Ver historial</button>
+                                                    <Modal open={openKey[monitor.macAddress]} setOpenKey={setOpenKey} macAddres={monitor.macAddress}>
+                                                        <Historial onClose={handleOpenClick(monitor.macAddress)} id={monitor.macAddress}/> 
                                                     </Modal>
+                                                    
                                                 </div>
 
                                                 <div className='tarjeta__grupo-datos'>
