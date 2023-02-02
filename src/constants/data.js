@@ -7,8 +7,8 @@ const sidebarData = [
         cName: 'side-text'
     },
     {
-        title: 'Componentes',
-        path: '/componentes',
+        title: 'Cerrar sesion',
+        path: '/',
         cName: 'side-text'
     }
 ]

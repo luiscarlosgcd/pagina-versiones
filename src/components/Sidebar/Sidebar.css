@@ -42,11 +42,12 @@
 }
 
 .side-text{
-    display: block;
-    padding: 8px 0px 20px 20px;
+    display: flex;
+    margin: 0px 0px 40px 20px;
     list-style: none;
     height: 60px;
-    cursor: default;
+    cursor: pointer;
+    width: 130px;
 }
 
 .side-text a{
@@ -80,6 +81,11 @@
 }
 
 .sidebar-heading img{
-    width:130px;
+    width: 130px;
     height: auto;
+}
+
+#sidebar__logout{
+    color: white;
+    text-decoration: none;
 }

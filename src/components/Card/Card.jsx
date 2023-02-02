@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { getMonitor, getVersion } from '../../api/Monitor';
-import { BiCaretDown } from 'react-icons/bi'
-import { BiCaretUp } from 'react-icons/bi'
+import { BiCaretDown, BiCaretUp } from 'react-icons/bi'
 import './Card.css';
 
 import Modal from '../../components/Modal/Modal';
