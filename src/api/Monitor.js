@@ -1,21 +1,40 @@
 import axios from "axios";
 
-const baseUrlLogin = "http//25.65.195.188:8083/api/Usuario/login";
+let token = null;
+let expiration = null;
 
-const getMonitor = async (state) => {
-  const peticion = await axios.get("http://25.65.195.188:8083/api/Monitor/erp");
-  state(peticion.data);
+const setToken = (newToken) => {
+  token = `Bearer ${newToken}`;
 };
 
-const getVersion = async (state) => {
+const setExpiration = (newExpiration) => {
+  expiration = new Date(newExpiration);
+};
+
+const getMonitor = async (state) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
   const peticion = await axios.get(
-    "http://25.65.195.188:8083/api/Componente/version"
+    "http://25.65.195.188:8083/api/Monitor/erp",
+    config
   );
   state(peticion.data);
 };
 
-const getLogin = async (credentials) => {
-  const { data } = await axios.post(baseUrlLogin, credentials);
+const getVersion = async (state) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const peticion = await axios.get(
+    "http://25.65.195.188:8083/api/Componente/version",
+    config
+  );
+  state(peticion.data);
 };
 
-export { getMonitor, getVersion };
+export { getMonitor, getVersion, setToken, setExpiration };

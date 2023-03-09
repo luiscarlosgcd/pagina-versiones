@@ -1,4 +1,3 @@
-import React from "react";
 import Login from "./pages/Login/Login";
 import Monitor from "./pages/Monitor/Monitor";
 import Componentes from "./pages/Componentes/Componentes";

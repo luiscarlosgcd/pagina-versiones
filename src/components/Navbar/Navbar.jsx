@@ -19,6 +19,10 @@ const Navbar = () => {
     getVersion(setVersion);
   }, []);
 
+  const handleLogout = async (e) => {
+    window.localStorage.removeItem("loggedNoteAppCliente");
+  };
+
   return (
     <>
       <div className="app__navbar">
@@ -49,7 +53,7 @@ const Navbar = () => {
         }
       >
         <nav className={sidebar ? "nav-sidemenu active" : "nav-sidemenu"}>
-          <ul className="nav-sidemenu__items">
+          <ol className="nav-sidemenu__items">
             <div className="sidebar-heading">
               <img src={images.LogoLitrixBlanco} alt="Logo Litrix" />
             </div>
@@ -63,7 +67,12 @@ const Navbar = () => {
                 </li>
               );
             })}
-          </ul>
+            <li className="side-text">
+              <Link to="/">
+                <button onClick={handleLogout}>Cerrar sesión</button>
+              </Link>
+            </li>
+          </ol>
         </nav>
       </div>
     </>
